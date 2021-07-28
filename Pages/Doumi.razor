@@ -1,0 +1,40 @@
+@page "/dummy"
+
+
+<h1>Dummy</h1>
+
+<h2>@(GetIt())</h2>
+
+
+
+@code {
+    
+    
+
+    private string GetIt()
+    {
+        var strings = new[]
+        {
+            "coffee",
+            "mug",
+            "ball",
+            "glasses",
+            "smartphone",
+            "cat",
+            "guinea pig",
+            "book",
+            "couch",
+            "caterpillar"
+        };
+        var rndGen = new Random();
+        var index = rndGen.Next(0, strings.Length);
+        return strings[index];
+    }
+    
+    private int currentCount = 0;
+
+    private void IncrementCount()
+    {
+        currentCount++;
+    }
+}
